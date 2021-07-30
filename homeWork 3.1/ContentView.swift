@@ -7,15 +7,42 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     
-    @State var currentLight = CurrentLight.red
+    @State private var currentLight = CurrentLight.red
     
     @State private var buttonTitle = "START"
     
-    @State private var redColor: Color = .clear
-    @State private var yellowColor: Color = .clear
-    @State private var greenColor: Color = .clear
+    @State private var redOpacity = 0.3
+    @State private var yellowOpacity = 0.3
+    @State private var greenOpacity = 0.3
+    
+    private let lightOn = 1.0
+    private let lightOff = 0.3
+    
+    func changeColor() {
+        switch currentLight {
+        case .red:
+            redOpacity = lightOn
+            yellowOpacity = lightOff
+            greenOpacity = lightOff
+            currentLight = .yellow
+        case .yellow:
+            redOpacity = lightOff
+            yellowOpacity = lightOn
+            greenOpacity = lightOff
+            currentLight = .green
+        case .green:
+            redOpacity = lightOff
+            yellowOpacity = lightOff
+            greenOpacity = lightOn
+            currentLight = .red
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -24,43 +51,21 @@ struct ContentView: View {
                            endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                CircleView(color: redColor)
-                CircleView(color: yellowColor)
-                CircleView(color: greenColor)
+            VStack(spacing: 20) {
+                CircleView(color: .red, opacity: redOpacity)
+                CircleView(color: .yellow, opacity: yellowOpacity)
+                CircleView(color: .green, opacity: greenOpacity)
                 
                 Spacer()
                 
-                Button(action: {
+                ChangeColorButton(title: buttonTitle) {
                     if buttonTitle == "START" {
                         buttonTitle = "NEXT"
                     }
-                    switch currentLight {
-                    case .red:
-                        redColor = redLightOn
-                        yellowColor = yellowLightOff
-                        greenColor = greenLightOff
-                        currentLight = .yellow
-                    case .yellow:
-                        redColor = redLightOff
-                        yellowColor = yellowLightOn
-                        greenColor = greenLightOff
-                        currentLight = .green
-                    case .green:
-                        redColor = redLightOff
-                        yellowColor = yellowLightOff
-                        greenColor = greenLightOn
-                        currentLight = .red
-                    }
-                }) {
-                    Text("\(buttonTitle)")
-                }.padding()
-                .accentColor(.blue)
-                .background(Color.white)
-                .cornerRadius(10)
-                .shadow(radius: 10)
+                    changeColor()
+                }
                 
-            }.padding(.top, 30).padding(.bottom, 30)
+            }.padding(.top, 30).padding(.bottom, 20)
         }
     }
 }

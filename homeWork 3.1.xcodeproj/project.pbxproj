@@ -12,7 +12,7 @@
 		7AA2F78C26B0257C00C04A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2F78B26B0257C00C04A35 /* Assets.xcassets */; };
 		7AA2F78F26B0257C00C04A35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2F78E26B0257C00C04A35 /* Preview Assets.xcassets */; };
 		7AA2F79726B0271A00C04A35 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2F79626B0271A00C04A35 /* CircleView.swift */; };
-		7AA2F79926B172EF00C04A35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2F79826B172EF00C04A35 /* Constants.swift */; };
+		7AA2F79D26B4063600C04A35 /* ChangeColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2F79C26B4063600C04A35 /* ChangeColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		7AA2F78E26B0257C00C04A35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AA2F79026B0257C00C04A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AA2F79626B0271A00C04A35 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		7AA2F79826B172EF00C04A35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7AA2F79C26B4063600C04A35 /* ChangeColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				7AA2F79026B0257C00C04A35 /* Info.plist */,
 				7AA2F78D26B0257C00C04A35 /* Preview Content */,
 				7AA2F79626B0271A00C04A35 /* CircleView.swift */,
-				7AA2F79826B172EF00C04A35 /* Constants.swift */,
+				7AA2F79C26B4063600C04A35 /* ChangeColorButton.swift */,
 			);
 			path = "homeWork 3.1";
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA2F79726B0271A00C04A35 /* CircleView.swift in Sources */,
+				7AA2F79D26B4063600C04A35 /* ChangeColorButton.swift in Sources */,
 				7AA2F78A26B0257900C04A35 /* ContentView.swift in Sources */,
 				7AA2F78826B0257900C04A35 /* homeWork_3_1App.swift in Sources */,
-				7AA2F79926B172EF00C04A35 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
